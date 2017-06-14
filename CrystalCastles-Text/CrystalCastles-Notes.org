@@ -30,7 +30,3 @@ Algothrim: perhaps you are looking for the greatest area between the two objects
 
 * Comment Problem [0/1]
 + [ ] Figure out how to make it so when you comment it's at the start of the file.
-* Useful Unity Code:
-** Cursor
-1. *Local input location:* Input.GetAxis(GetAxis.xMouse)
-2. *World input location:* Camera.main.ScreenToWorldPoint(Input.mousePosition).
