@@ -12,36 +12,12 @@ namespace CrystalCastles.UnityEditor
 	[CustomEditor(typeof(GameManager))]
 	public class GameManagerEditor : Editor
 	{
+		private GameManager gameManager;
 		/// <summary>
 		/// This displays the Creature List variable. The reason this is a Serialized Property is because Unity does 
 		/// not easily support List classes in their Editor GUI functions.
 		/// </summary>
-		private GameManager gameManager;
 		private SerializedProperty creatureList;
-
-		public void OnEnable ()
-		{
-			creatureList = serializedObject.FindProperty("creatureList");
-		}
-
-		public override void OnInspectorGUI ()
-		{
-			gameManager = (GameManager)target;
-			EditorGUILayout.PropertyField(creatureList, true);
-			grabAndSortCreatureLayer();
-		}
-
-		/// <summary>
-		/// Grabs and sorts all the creatures in the scene using SpriteRenderer.OrderInLayer(int number)
-		/// and Sort.SortLayer(List <Creature> creature).
-		/// </summary>
-		private void grabAndSortCreatureLayer ()
-		{
-			if (GUILayout.Button("Sort Creature's Layers", GUILayout.Height(14f), GUILayout.Width(132f))) 
-			{
-				grabMultipleCreature();
-			}
-		}
 
 		/// <summary>
 		/// I think this is a dangerious function. A couple things I don't like is I can no longer
@@ -63,6 +39,31 @@ namespace CrystalCastles.UnityEditor
 											 			   .ToList ();
 				gameManager.creatureList.Layer();
 			}
+		}
+
+		/// <summary>
+		/// Grabs and sorts all the creatures in the scene using SpriteRenderer.OrderInLayer(int number)
+		/// and Sort.SortLayer(List <Creature> creature). I would like to get rid of this function and 
+		/// just have a real editor instead.
+		/// </summary>
+		private void grabAndSortCreatureLayer ()
+		{
+			if (GUILayout.Button("Sort Creature's Layers", GUILayout.Height(14f), GUILayout.Width(132f))) 
+			{
+				grabMultipleCreature();
+			}
+		}
+
+		public void OnEnable ()
+		{
+			creatureList = serializedObject.FindProperty("creatureList");
+		}
+
+		public override void OnInspectorGUI ()
+		{
+			gameManager = (GameManager)target;
+			EditorGUILayout.PropertyField(creatureList, true);
+			grabAndSortCreatureLayer();
 		}
 	}
 }

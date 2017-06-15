@@ -10,6 +10,7 @@ namespace CrystalCastles
 	/// it uses and relies on a bunch of classes. 
 	/// </summary>
 	[RequireComponent (typeof(SpriteRenderer))]
+	[RequireComponent (typeof(CircleCollider2D))]
 	public class Creature : MonoBehaviour
 	{
 		/// <summary>

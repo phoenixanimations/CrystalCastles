@@ -1,7 +1,10 @@
 * REMEMBER! [0/1]
 + [ ] Folder Structure Script -> Engine -> Crystal Castles
-* Create Image
-+ [ ] Create cursor debug image.
+* Figure out Getcomponet vs Drag Problem
++ Either have it so you have to drag the file.
++ Or it gets it by code.
+* Create Image [1/1]
++ [X] Create cursor debug image.
 * Cursor Problem [2/4]
 Make a cursor and have it hijack your mouse. Then when ever you move the mouse you move the
 cursor. The cursor decides what's selected and what shows up in the ui menu.
@@ -29,9 +32,12 @@ Grid snapping system has a mouse state machine.
 
 SOLUTION:
 Algothrim: perhaps you are looking for the greatest area between the two objects. 
-* Creature.cs [0/2]
-1. [ ] Have it detect the wrong placement of the pivot and give a warning.
-2. [ ] Have it declare an error if the circle collider is wrong.
+* Creature.cs [4/4]
+1. [X] An error for disattached collider.
+2. [X] Have it detect the wrong placement of the renderer pivot and give a warning.
+3. [X] An error for no height.
+4. [X] Have it declare an error if the circle collider is wrong.
+   Offset: x = 4.135, y = 1.175, radius = 0.03
 * Comment Problem [0/1]
 + [ ] Figure out how to make it so when you comment it's at the start of the file.
 * Quick Notes

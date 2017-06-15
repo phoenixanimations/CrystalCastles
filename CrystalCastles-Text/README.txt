@@ -61,3 +61,12 @@ Coding Conventions:
     2. But if it doesn't i.e. creature needs physics and raycast but which comes first physics or
        raycast? When it doesn't make sense to put either first treat them as components, or seperate
        class files if it isn't a monobehaviour.
+
+13. Prefer easier to change over optimize code. Once the code starts glitching/getting unreadable
+    and messy then optimize takes priority. Everything should be easy to delete. Example have an
+    error appear if creature isn't hooked up to Sprite Renderer. *Don't* make it so Creature has on
+    Start, getcomponet<SpriteRenderer> ().
+
+14. Crystal Castles prefers the user to drag the component onto the object rather than
+    GetComponet<ObjectName> at the start. I believe this is more clear for the gameobjects. Have an
+    error appear with a button to equip it, if it's important for it to be dragged.
