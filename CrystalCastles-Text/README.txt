@@ -70,3 +70,19 @@ Coding Conventions:
 14. Crystal Castles prefers the user to drag the component onto the object rather than
     GetComponet<ObjectName> at the start. I believe this is more clear for the gameobjects. Have an
     error appear with a button to equip it, if it's important for it to be dragged.
+
+15. When making a Field that has a different private/public get/set it must be formated like so:
+    [SerializeField]
+    private int serializedField;
+
+    public int field
+    {
+        get 
+        {
+             return serializedField;
+        }
+        set
+        {
+             serializedfield = value;
+        }
+    }
