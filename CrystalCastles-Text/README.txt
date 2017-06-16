@@ -86,7 +86,11 @@ Coding Conventions:
              serializedfield = value;
         }
     }
+    Note it's _serialize_ *not* serialized.
 
 16. While height is relatively flexable I would not abuse it. Stick to making anything you want to
     jump over half height. And any kind of building if you want it to be interactive have it 4.9f in
     height.
+
+17. When the editor uses reflection it most label the reflected variable with:
+    /// This variable is affected by the editor reflection.

@@ -9,17 +9,21 @@ namespace CrystalCastles
 	public class CreaturePhysics : CreatureMovement 
 	{
 		[SerializeField]
-		private CreatureRaycast serializedCreatureRaycast;
+		/// <summary>
+		/// This grabs the raycast code and their methods as they are heavily used in the physics code.
+		/// This variable is affected by the editor reflection.
+		/// </summary>
+		private CreatureRaycast serializeCreatureRaycast;
 		public CreatureRaycast creatureRaycast
 		{
 			get 
 			{
-				return serializedCreatureRaycast;
+				return serializeCreatureRaycast;
 			}
 
 			private set 
 			{
-				serializedCreatureRaycast = value;
+				serializeCreatureRaycast = value;
 			}
 		}
 

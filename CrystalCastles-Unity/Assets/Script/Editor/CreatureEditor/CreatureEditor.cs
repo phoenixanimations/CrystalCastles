@@ -23,9 +23,6 @@ namespace CrystalCastles.UnityEditor
 			EditorGUILayout.ObjectField ("Sprite Renderer", creature.spriteRenderer, typeof(SpriteRenderer), false);
 			DisplayErrorSpriteRenderer ();
 
-//			EditorGUILayout.ObjectField ("Creature Raycast", creature.creatureRaycast, typeof(CreatureRaycast), false);
-//			DisplayCreatureRaycastError ();
-
 			EditorGUILayout.ObjectField ("Creature Physics", creature.creaturePhysics, typeof(CreaturePhysics), false);
 			DisplayCreaturePhysicsError();
 

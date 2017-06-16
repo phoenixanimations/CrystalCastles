@@ -45,7 +45,7 @@ namespace CrystalCastles.UnityEditor
 				EditorGUILayout.HelpBox("CreatureRaycast is not assigned. This will cause errors if you attack, or move. Click the button to avoid errors.", MessageType.Error);
 				if (GUILayout.Button ("Set CreatureRaycast", GUILayout.Height (14f), GUILayout.Width (132f)))
 				{
-					creaturePhysics.SetMemberValue("serializedCreatureRaycast", creaturePhysics.GetComponent<CreatureRaycast> ());
+					creaturePhysics.SetMemberValue("serializeCreatureRaycast", creaturePhysics.GetComponent<CreatureRaycast> ());
 				}
 			}
 		}

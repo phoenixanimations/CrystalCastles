@@ -1,18 +1,5 @@
 *REMEMBER!*
-Folder Structure Script -> Engine -> Crystal Castles
-* Make Everything that shouldn't be public be private [0/3]
-1. [ ] spriteRenderer
-2. [ ] creatureRaycast
-3. [ ] creaturePhysic
-* Label all reflected variables. 
-* 3 Seperate Components
-1. Raycast
-2. Movement
-3. Physics
-* Physics/Height
-+ [ ] Move it to the physics file.
-* Raycast
-+ [ ] Look at old file.
+Folder Structure: Script -> Engine -> Crystal Castles
 * Cursor Problem [2/4]
 Make a cursor and have it hijack your mouse. Then when ever you move the mouse you move the
 cursor. The cursor decides what's selected and what shows up in the ui menu.
@@ -43,6 +30,9 @@ Algothrim: perhaps you are looking for the greatest area between the two objects
 * Comment Problem [0/1]
 + [ ] Figure out how to make it so when you comment it's at the start of the file.
 * Quick Notes
-x 641.938
-y 606.601
+Figure out how to solve the component/stat problem with the Front stat and local/global height stat.
+** Make Everything that shouldn't be public be private? [0/3]
+1. [ ] spriteRenderer
+2. [ ] creatureRaycast
+3. [ ] creaturePhysic
 * [[/Users/Getpeanuts/Documents/Emacs/Hotkeys-Tips.org][Helpful Unity Tips]]
