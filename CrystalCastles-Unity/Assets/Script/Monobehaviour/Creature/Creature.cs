@@ -9,6 +9,9 @@ namespace CrystalCastles
 	/// I will try to break up this "god prefab" as best I can but as of right now
 	/// it uses and relies on a bunch of classes. 
 	/// </summary>
+	/// Creature acts as the final functions to be used as the engine.
+	/// To avoid any kind of reliabilty between components the creature should have final say. 
+	/// It's the only object that knows about everything.
 	[RequireComponent (typeof(SpriteRenderer))]
 	[RequireComponent (typeof(CircleCollider2D))]
 	[RequireComponent (typeof(CreatureRaycast))]

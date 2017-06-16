@@ -4,6 +4,7 @@ Folder Structure Script -> Engine -> Crystal Castles
 1. [ ] spriteRenderer
 2. [ ] creatureRaycast
 3. [ ] creaturePhysic
+* Label all reflected variables. 
 * 3 Seperate Components
 1. Raycast
 2. Movement
