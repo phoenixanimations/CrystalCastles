@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CrystalCastles.Mouse
+namespace CrystalCastles
 {
 	public class MouseGUI : MonoBehaviour
 	{
