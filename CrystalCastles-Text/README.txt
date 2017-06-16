@@ -86,3 +86,7 @@ Coding Conventions:
              serializedfield = value;
         }
     }
+
+16. While height is relatively flexable I would not abuse it. Stick to making anything you want to
+    jump over half height. And any kind of building if you want it to be interactive have it 4.9f in
+    height.
