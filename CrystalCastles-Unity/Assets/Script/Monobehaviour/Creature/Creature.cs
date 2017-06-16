@@ -11,6 +11,7 @@ namespace CrystalCastles
 	/// </summary>
 	[RequireComponent (typeof(SpriteRenderer))]
 	[RequireComponent (typeof(CircleCollider2D))]
+	[RequireComponent (typeof(CreatureRaycast))]
 	public class Creature : MonoBehaviour
 	{
 		/// <summary>
@@ -22,17 +23,32 @@ namespace CrystalCastles
 		public bool player;
 
 		/// <summary>
-		/// The height is used in the Sort.SortLayer(List<Creature>) and
-		/// in the attack code. Height is also checked for jumping. 
+		/// This is the height of the creature.
 		/// </summary>
-		public float height;
+		/// Height should be moved to the physics file.
+		public float creatureHeight;
+
+		/// <summary>
+		/// This represents the height the creature is in, in the world. 
+		/// If the creature is standing on a cube with the height of 4.9 and the creature themselves has a height of
+		/// 2.3 the worldHeight would be 7.2. The height is used in the Sort.SortLayer(List<Creature>) and
+		/// in the attack code. Height is also checked for jumping.
+		/// </summary>
+		/// Height should be moved to the physics file.
+		public float worldHeight;
 
 		/// <summary>
 		/// The sprite renderer is required soley because of sort.SortLayer(List<Creature>). Perhaps there is 
 		/// a way to make it so this isn't needed.
 		/// </summary>
 		/// spriteRenderer is assigned on scene to make it compatible with the GUI Editor 
-		/// Game Manager button.
+		/// Game Manager button. This should not be able to be set.
 		public SpriteRenderer spriteRenderer;
+
+		/// <summary>
+		/// This is to handle anything that needs the creature raycast.
+		/// </summary>
+		/// This should not be able to be set.
+		public CreatureRaycast creatureRaycast;
 	}
 }
