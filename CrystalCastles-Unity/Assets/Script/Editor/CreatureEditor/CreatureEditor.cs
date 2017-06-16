@@ -13,12 +13,17 @@ namespace CrystalCastles.UnityEditor
 			Initialize();
 			creature.player = EditorGUILayout.Toggle ("Player", creature.player);
 
-			creature.height = EditorGUILayout.FloatField ("Height", creature.height);
-			DisplayErrorHeight ();
+			creature.creatureHeight = EditorGUILayout.FloatField ("Creature Height", creature.creatureHeight);
+			DisplayErrorCreatureHeight ();
 
-			creature.spriteRenderer = (SpriteRenderer)EditorGUILayout.ObjectField ("Sprite Renderer", creature.spriteRenderer, typeof(SpriteRenderer), false);
+			EditorGUILayout.ObjectField ("Sprite Renderer", creature.spriteRenderer, typeof(SpriteRenderer), false);
 			DisplayErrorSpriteRenderer ();
+
+			EditorGUILayout.ObjectField ("Creature Raycast", creature.creatureRaycast, typeof(CreatureRaycast), false);
+			DisplayCreatureRaycastError ();
+
 			DisplayErrorCircleCollider2D ();
+			serializedObject.ApplyModifiedProperties();
 		}
 	}
 }
