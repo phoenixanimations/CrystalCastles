@@ -12,6 +12,7 @@ namespace CrystalCastles
 	[RequireComponent (typeof(SpriteRenderer))]
 	[RequireComponent (typeof(CircleCollider2D))]
 	[RequireComponent (typeof(CreatureRaycast))]
+	[RequireComponent (typeof (CreaturePhysics))]
 	public class Creature : MonoBehaviour
 	{
 		/// <summary>
@@ -23,9 +24,23 @@ namespace CrystalCastles
 		public bool player;
 
 		/// <summary>
+		/// This determines the direction in which the player is facing.
+		/// </summary>
+		/// This is not in the CreatureMovement.cs or other files as multiple
+		/// files effect (attack, physics, general input, etc). 
+		public Vector2 front;
+
+		/// <summary>
+		/// Determines whether the player can move. Mostly the physics engine/movement touches this. 
+		/// But attacks can stop movement as well.
+		/// </summary>
+		public bool allowMovement;
+
+		/// <summary>
 		/// This is the height of the creature.
 		/// </summary>
-		/// Height should be moved to the physics file.
+		/// Height will not move to any file because it is used in both Physics, and Attack.
+		/// This should not have a public set.
 		public float creatureHeight;
 
 		/// <summary>
@@ -34,7 +49,7 @@ namespace CrystalCastles
 		/// 2.3 the worldHeight would be 7.2. The height is used in the Sort.SortLayer(List<Creature>) and
 		/// in the attack code. Height is also checked for jumping.
 		/// </summary>
-		/// Height should be moved to the physics file.
+		/// Height will not move to any file because it is used in both Physics, and Attack.
 		public float worldHeight;
 
 		/// <summary>
@@ -46,9 +61,9 @@ namespace CrystalCastles
 		public SpriteRenderer spriteRenderer;
 
 		/// <summary>
-		/// This is to handle anything that needs the creature raycast.
+		/// This will handle the physics of the Crystal Castle engine.
 		/// </summary>
-		/// This should not be able to be set.
-		public CreatureRaycast creatureRaycast;
+		/// This should not have a public set.
+		public CreaturePhysics creaturePhysics;
 	}
 }
