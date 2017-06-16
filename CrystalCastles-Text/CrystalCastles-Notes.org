@@ -1,5 +1,9 @@
 *REMEMBER!*
 Folder Structure Script -> Engine -> Crystal Castles
+* Make Everything that shouldn't be public be private [0/3]
+1. [ ] spriteRenderer
+2. [ ] creatureRaycast
+3. [ ] creaturePhysic
 * 3 Seperate Components
 1. Raycast
 2. Movement
