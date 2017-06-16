@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Transparent : MonoBehaviour 
+namespace CrystalCastles
 {
-	public float transparency;
-	private SpriteRenderer spriteRenderer;
-	void Start ()
+	public class Transparent : MonoBehaviour
 	{
-		spriteRenderer = this.GetComponent <SpriteRenderer>();
-		if (transparency == 0)
+		public float transparency;
+		private SpriteRenderer spriteRenderer;
+
+		void Start ()
 		{
-			transparency = 1f;
-		}
-		else
-		{
-			transparency = transparency/100f;
-			spriteRenderer.color = new Color(1f,1f,1f,transparency);
+			spriteRenderer = this.GetComponent <SpriteRenderer> ();
+			if (transparency == 0) {
+				transparency = 1f;
+			} else {
+				transparency = transparency / 100f;
+				spriteRenderer.color = new Color (1f, 1f, 1f, transparency);
+			}
 		}
 	}
 }
