@@ -15,13 +15,13 @@ namespace CrystalCastles.CrystalDebug
 		public static string VectorCToText (Vector2 vectorToConvert)
 		{
 			string vectorString = "Not a VectorC.";
-			if (vectorToConvert == VectorC.Up)
+			if (vectorToConvert == VectorCreature.Up)
 				vectorString =  "Up";
-			if (vectorToConvert == VectorC.Down)
+			if (vectorToConvert == VectorCreature.Down)
 				vectorString =  "Down";
-			if (vectorToConvert == VectorC.Left)
+			if (vectorToConvert == VectorCreature.Left)
 				vectorString =  "Left";
-			if (vectorToConvert == VectorC.Right)
+			if (vectorToConvert == VectorCreature.Right)
 				vectorString =  "Right";
 			return vectorString;
 		}

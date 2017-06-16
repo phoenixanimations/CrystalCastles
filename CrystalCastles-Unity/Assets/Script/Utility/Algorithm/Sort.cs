@@ -22,7 +22,7 @@ namespace CrystalCastles
 			if (creatureList.Count > 0)
 			{
 				int layer = 0;
-				creatureList.OrderBy(s => s.height)
+				creatureList.OrderBy(s => s.worldHeight)
 						    .ThenByDescending(p => Mathf.Floor(p.transform.position.y * 100f))
 						    .ThenBy(p => Mathf.Floor(p.transform.position.x * 100f))
 						    .ToList()
