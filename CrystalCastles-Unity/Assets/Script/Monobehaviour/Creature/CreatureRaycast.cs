@@ -45,9 +45,20 @@ namespace CrystalCastles
 		/// This should be used for all raycasts that the Creature class makes.
 		/// </summary>
 		/// <returns>The creature position, plus the creatureRaycast.x, creatureRaycast.y</returns>
-		public Vector2 defaultPosition ()
+		public Vector2 DefaultPosition ()
 		{
 			return new Vector2 (transform.position.x + x, transform.position.y + y);
+		}
+
+		/// <summary>
+		/// A wrapper function to avoid having to remember the confusing Direction * Length.
+		/// </summary>
+		/// <param name="Position">The position you want the ray to be cast.</param>
+		/// <param name="Direction">The Direction of the ray.</param>
+		/// <param name="Length">The length (can't be infinity).</param>
+		protected void DebugDrawRay (Vector2 Position, Vector2 Direction, float Length)
+		{
+			Debug.DrawRay(Position,Direction * Length,Color.red);
 		}
 	}
 }
