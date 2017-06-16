@@ -30,7 +30,7 @@ namespace CrystalCastles.UnityEditor
 			if (creature.creatureHeight <= .03f) 
 			{
 				EditorGUILayout.HelpBox ("Creature Height less than " + circleCollider2D.radius + ", this will cause glitches with the tile system. " +
-					"Make it higher than " + circleCollider2D.radius + " to avoid glitches.", MessageType.Error);
+					"Make it higher than " + circleCollider2D.radius + " to avoid glitches. The size of a human is 4.9f", MessageType.Error);
 			}
 		}
 
@@ -86,31 +86,32 @@ namespace CrystalCastles.UnityEditor
 			}
 		}
 
-		protected void DisplayCreatureRaycastError ()
+		/// <summary>
+		/// Checks to make sure you have CreaturePhysics attached.
+		/// </summary>
+		protected void DisplayCreaturePhysicsError ()
 		{
-			if (creature.creatureRaycast == null)
+			if (creature.creaturePhysics == null)
 			{
-				EditorGUILayout.HelpBox("CreatureRaycast is not connected, this will cause errors if you attack, or move. Click the button to avoid errors", MessageType.Error);
-				if (GUILayout.Button("Set CreatureRaycast", GUILayout.Height(14f), GUILayout.Width(132f)))
+				EditorGUILayout.HelpBox("Creature Physics is null, this will cause errors when trying to move, and most combat moves.", MessageType.Error);
+				if (GUILayout.Button("Set Creature Physics", GUILayout.Height(14f), GUILayout.Width(130f)))
 				{
-					creature.creatureRaycast = creature.GetComponent<CreatureRaycast>();
+					creature.creaturePhysics = creature.GetComponent<CreaturePhysics>();
 				}
 			}
-			else
+		}
+
+		/// <summary>
+		/// Checks to make sure that creature front isn't {0, 0, 0}.
+		/// </summary>
+		protected void DisplayFrontError ()
+		{
+			if (creature.front == Vector2.zero)
 			{
-				float x = (float)creature.creatureRaycast.GetMemberValue("x");
-				float y = (float)creature.creatureRaycast.GetMemberValue("y");
-				if (creature.creatureRaycast.length != 5.5f || x != circleCollider2D.offset.x || y != circleCollider2D.offset.y)
+				EditorGUILayout.HelpBox("Front = {0, 0}, this will cause glitches. Click the button to avoid glitches", MessageType.Error);
+				if (GUILayout.Button("Set Front", GUILayout.Height(14f), GUILayout.Width(70f)))
 				{
-					EditorGUILayout.HelpBox("CreatureRaycast is not exactly\nx = " + 
-						circleCollider2D.offset.x + "\ny = " + circleCollider2D.offset.y +
-						"\nlength = 5.5f\nThis will mess up any movement, physics or attack code. Click the button to avoid errors.", MessageType.Warning);
-					if (GUILayout.Button("Set CreatureRaycast", GUILayout.Height(14f), GUILayout.Width(132f)))
-					{
-						creature.creatureRaycast.SetMemberValue("x", circleCollider2D.offset.x);
-						creature.creatureRaycast.SetMemberValue("y", circleCollider2D.offset.y);
-						creature.creatureRaycast.SetMemberValue("serializeLength", 5.5f);
-					}
+					creature.front = VectorCreature.Right;
 				}
 			}
 		}
