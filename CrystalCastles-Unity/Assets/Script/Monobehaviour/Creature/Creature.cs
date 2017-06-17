@@ -27,33 +27,14 @@ namespace CrystalCastles
 		public bool player;
 
 		/// <summary>
-		/// This determines the direction in which the player is facing.
+		/// The container for any game logic/stats.
 		/// </summary>
-		/// This is not in the CreatureMovement.cs or other files as multiple
-		/// files effect (attack, physics, general input, etc). 
-		public Vector2 front;
+		public CharacterSheet characterSheet;
 
 		/// <summary>
-		/// Determines whether the player can move. Mostly the physics engine/movement touches this. 
-		/// But attacks can stop movement as well.
+		/// If you want a temporary modifier to any stat, this is what you use.
 		/// </summary>
-		public bool allowMovement;
-
-		/// <summary>
-		/// This is the height of the creature.
-		/// </summary>
-		/// Height will not move to any file because it is used in both Physics, and Attack.
-		/// This should not have a public set.
-		public float creatureHeight;
-
-		/// <summary>
-		/// This represents the height the creature is in, in the world. 
-		/// If the creature is standing on a cube with the height of 4.9 and the creature themselves has a height of
-		/// 2.3 the worldHeight would be 7.2. The height is used in the Sort.SortLayer(List<Creature>) and
-		/// in the attack code. Height is also checked for jumping.
-		/// </summary>
-		/// Height will not move to any file because it is used in both Physics, and Attack.
-		public float worldHeight;
+		public CharacterSheet modifierSheet;
 
 		/// <summary>
 		/// The sprite renderer is required soley because of sort.SortLayer(List<Creature>). Perhaps there is 
