@@ -4,8 +4,27 @@ using UnityEngine;
 
 namespace CrystalCastles
 {
-	public class FoundationPhysics : MonoBehaviour
+	[RequireComponent(typeof(FoundationRaycast))]
+	public class FoundationPhysics : FoundationMovement
 	{
-			
+		[SerializeField]
+		/// <summary>
+		/// This grabs the FoundationRaycast.cs class and the methods as they are heavily used in the physics code.
+		/// This variable is affected by the editor reflection.
+		/// </summary>
+		private FoundationRaycast foundationRaycast;
+
+		/// <summary>
+		/// Move in a specific direction, this should always be used with VectorMove.
+		/// </summary>
+		/// <param name="direction">The direction to move.</param>
+		public virtual void Move (Vector2 direction)
+		{
+			RaycastHit2D hit = foundationRaycast.SearchForCollider(direction);
+			if (hit.collider == null)
+			{
+				NoClip (direction);
+			}
+		}	
 	}
 }

@@ -7,7 +7,7 @@ namespace CrystalCastles
 	/// <summary>
 	/// Use this class VectorC (Crystal Castles) to grab the numbers for the Crystal Castles grid system.
 	/// </summary>
-	public class VectorCreature
+	public static class VectorMove
 	{
 		/// <summary>
 		/// Short hand for writing Vector2 (2.9f, 2.2f).

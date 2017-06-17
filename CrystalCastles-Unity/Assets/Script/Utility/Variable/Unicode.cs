@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CrystalCastles.Variable
+namespace CrystalCastles.Unicode
 {
 	public sealed class Arrow 
 	{

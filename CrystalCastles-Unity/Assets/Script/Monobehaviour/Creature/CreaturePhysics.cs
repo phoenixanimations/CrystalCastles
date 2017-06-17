@@ -4,36 +4,22 @@ using UnityEngine;
 
 namespace CrystalCastles
 {
-	[RequireComponent(typeof(CircleCollider2D))]
-	[RequireComponent(typeof(CreatureRaycast))]
-	public class CreaturePhysics : CreatureMovement 
+	[RequireComponent (typeof(FoundationPhysics))]
+	[RequireComponent (typeof(CreatureRaycast))]
+	public class CreaturePhysics : MonoBehaviour 
 	{
-		[SerializeField]
 		/// <summary>
-		/// This grabs the raycast code and their methods as they are heavily used in the physics code.
+		/// This grabs the FoundationPhysics component a core feature of CreaturePhysics.
 		/// This variable is affected by the editor reflection.
 		/// </summary>
-		private CreatureRaycast serializeCreatureRaycast;
-		public CreatureRaycast creatureRaycast
-		{
-			get 
-			{
-				return serializeCreatureRaycast;
-			}
+		[SerializeField]
+		private FoundationPhysics foundationPhysics;
 
-			private set 
-			{
-				serializeCreatureRaycast = value;
-			}
-		}
-
-		public void Move (Vector2 direction)
-		{
-			RaycastHit2D hit = creatureRaycast.SearchForCreature(direction);
-			if (hit.collider == null)
-			{
-				NoClip (direction);
-			}
-		}
+		/// <summary>
+		/// This grabs the FoundationPhysics component a core feature in CreaturePhysics.
+		/// This variable is affected by the editor reflection.
+		/// </summary>
+		[SerializeField]
+		private CreatureRaycast creatureRaycast;
 	}
 }

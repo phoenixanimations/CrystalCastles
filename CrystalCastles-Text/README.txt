@@ -94,3 +94,8 @@ Coding Conventions:
 
 17. When the editor uses reflection it most label the reflected variable with:
     /// This variable is affected by the editor reflection.
+
+18. If you're having polymorphing problems/component problems, instead of polymorphing consider
+    making it into two components.
+
+19. *Do not* make buttons attach components in the editor.

@@ -64,6 +64,12 @@ namespace CrystalCastles
 		public SpriteRenderer spriteRenderer;
 
 		/// <summary>
+		/// This handles the raycasting for attack, move, physics etc.
+		/// </summary>
+		/// This should not have a public set.
+		public CreatureRaycast creatureRaycast;
+
+		/// <summary>
 		/// This will handle the physics of the Crystal Castle engine.
 		/// </summary>
 		/// This should not have a public set.

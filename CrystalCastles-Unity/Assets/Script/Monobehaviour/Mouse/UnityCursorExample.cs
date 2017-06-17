@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using CrystalCastles.Variable;
+using CrystalCastles.Mouse;
 
 namespace UnityExample
 {

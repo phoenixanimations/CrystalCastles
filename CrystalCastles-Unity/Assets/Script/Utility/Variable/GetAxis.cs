@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CrystalCastles.Variable
+namespace CrystalCastles.Mouse
 {
 	public sealed class GetAxis
 	{
