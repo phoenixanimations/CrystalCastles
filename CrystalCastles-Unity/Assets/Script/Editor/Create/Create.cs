@@ -6,7 +6,7 @@ namespace CrystalCastles.UnityEditor
 	public class Create
 	{
 		[MenuItem ("Create/New Character Sheet")]
-		public static void CreateCharacterSheet ()
+		public static void NewCharacterSheet ()
 		{
 			ScriptableObjectUtility.CreateAsset<CharacterSheet> ();
 		}
