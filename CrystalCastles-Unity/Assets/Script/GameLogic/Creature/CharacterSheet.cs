@@ -15,7 +15,7 @@ namespace CrystalCastles
 		/// Determines whether the player can move. Mostly the physics engine/movement touches this. 
 		/// But attacks can stop movement as well.
 		/// </summary>
-		public bool allowMovement;
+		public bool toggleMove;
 
 		/// <summary>
 		/// This determines the direction in which the player is facing.
