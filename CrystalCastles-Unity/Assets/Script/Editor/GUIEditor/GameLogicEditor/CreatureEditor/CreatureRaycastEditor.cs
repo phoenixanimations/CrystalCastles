@@ -15,8 +15,7 @@ namespace CrystalCastles.UnityEditor
 		{
 			if (creatureRaycast.GetMemberValue("foundationRaycast") == null)
 			{
-				EditorGUILayout.HelpBox("Foundation Raycast is null. This will cause errors in any Raycasting done with CreatureRaycast.cs. " +
-					"Please drag the Foundation Raycast component to the box and then hit apply.", MessageType.Error);
+				EditorGUILayout.HelpBox(HelpBox.ComponentError ("Foundation Raycast"), MessageType.Error);
 			}
 		}
 

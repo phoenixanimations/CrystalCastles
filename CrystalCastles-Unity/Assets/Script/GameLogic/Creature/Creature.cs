@@ -16,7 +16,7 @@ namespace CrystalCastles
 	[RequireComponent (typeof(CircleCollider2D))]
 	[RequireComponent (typeof(CreatureRaycast))]
 	[RequireComponent (typeof (CreaturePhysics))]
-	public class Creature : MonoBehaviour
+	public class Creature : MonoBehaviour, IUseInStart
 	{
 		/// <summary>
 		/// Player is used by two classes, GameManager and the input class.
@@ -55,5 +55,12 @@ namespace CrystalCastles
 		/// </summary>
 		/// This should not have a public set.
 		public CreaturePhysics creaturePhysics;
+
+		public void UseInStart () 
+		{
+			/// Fixes the glitch of having the objects grab from one reference and creates a new reference on runtime.
+			characterSheet = ScriptableObject.Instantiate <CharacterSheet> (characterSheet);
+			modifierSheet = ScriptableObject.Instantiate <CharacterSheet> (modifierSheet);
+		}
 	}
 }

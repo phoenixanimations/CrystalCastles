@@ -25,13 +25,13 @@ namespace CrystalCastles.UnityEditor
 		/// </summary>
 		private void EnumGetFront ()
 		{
-			if (characterSheet.front == VectorMove.Up)
+			if (characterSheet.front == VectorMove.up)
 				selectDirection = direction.up;
-			if (characterSheet.front == VectorMove.Right)
+			if (characterSheet.front == VectorMove.right)
 				selectDirection = direction.right;
-			if (characterSheet.front == VectorMove.Down)
+			if (characterSheet.front == VectorMove.down)
 				selectDirection = direction.down;
-			if (characterSheet.front == VectorMove.Left)
+			if (characterSheet.front == VectorMove.left)
 				selectDirection = direction.left;
 		}
 		/// <summary>
@@ -42,16 +42,16 @@ namespace CrystalCastles.UnityEditor
 			switch (selectDirection) 
 			{
 			case direction.up:
-				characterSheet.front = VectorMove.Up;
+				characterSheet.front = VectorMove.up;
 				break;
 			case direction.right:
-				characterSheet.front = VectorMove.Right;
+				characterSheet.front = VectorMove.right;
 				break;
 			case direction.down:
-				characterSheet.front = VectorMove.Down;
+				characterSheet.front = VectorMove.down;
 				break;
 			case direction.left:
-				characterSheet.front = VectorMove.Left;
+				characterSheet.front = VectorMove.left;
 				break;
 			default:
 				Debug.LogError("Some how there was more than four directions");

@@ -13,16 +13,16 @@ namespace CrystalCastlesDebug
 		/// <returns>Returns Up, Down, Left, Right</returns>
 		/// <param name="vectorToConvert">Insert a VectureCreature variable.</param>
 		/// Note: This isn't a switch statement as vectors aren't supported by switch statements.
-		public static string VectorCreatureToText (Vector2 vectorToConvert)
+		public static string VectorMoveToText (Vector2 vectorToConvert)
 		{
 			string vectorString = "Not a VectorMove Vector.";
-			if (vectorToConvert == VectorMove.Up)
+			if (vectorToConvert == VectorMove.up)
 				vectorString =  "Up";
-			if (vectorToConvert == VectorMove.Down)
+			if (vectorToConvert == VectorMove.down)
 				vectorString =  "Down";
-			if (vectorToConvert == VectorMove.Left)
+			if (vectorToConvert == VectorMove.left)
 				vectorString =  "Left";
-			if (vectorToConvert == VectorMove.Right)
+			if (vectorToConvert == VectorMove.right)
 				vectorString =  "Right";
 			return vectorString;
 		}

@@ -12,21 +12,21 @@ namespace CrystalCastles
 		/// <summary>
 		/// Short hand for writing Vector2 (2.9f, 2.2f).
 		/// </summary>
-		public static readonly Vector2 Up = new Vector2 (2.9f, 2.2f);
+		public static readonly Vector2 up = new Vector2 (2.9f, 2.2f);
 
 		/// <summary>
 		/// Short hand for writing Vector2 (-2.9f, -2.2f).
 		/// </summary>
-		public static readonly Vector2 Down = new Vector2 (-2.9f, -2.2f);
+		public static readonly Vector2 down = new Vector2 (-2.9f, -2.2f);
 
 		/// <summary>
 		/// Short hand for writing Vector2 (-5.2f, 0f).
 		/// </summary>
-		public static readonly Vector2 Left = new Vector2 (-5.2f, 0f);
+		public static readonly Vector2 left = new Vector2 (-5.2f, 0f);
 
 		/// <summary>
 		/// Short hand for writing Vector2 (5.2f, 0f);
 		/// </summary>
-		public static readonly Vector2 Right = new Vector2 (5.2f, 0f);	
+		public static readonly Vector2 right = new Vector2 (5.2f, 0f);	
 	}
 }

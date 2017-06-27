@@ -2,6 +2,10 @@
 Folder Structure: Script -> Engine -> Crystal Castles
 * Add Warnings [0/1]
 + [ ] Add warnings to Character sheet, perhaps they should be on the Creature.cs component as well?
+* Add a New Character Sheet Object on Creature [0/1]
++ [ ] Create a new character sheet that's created through a method that adds the two sheets
+  together, and that's the sheet. Also the modifier sheet should be created as well. In fact all
+  sheets should be duplicated and not reference from the same file.
 * Perhaps add buttons?
 + [ ] Perhaps add buttons to make the errors easier to handle. Unsure because of all the checks that
   have to be made.
@@ -34,6 +38,20 @@ SOLUTION:
 Algothrim: perhaps you are looking for the greatest area between the two objects. 
 * Comment Problem [0/1]
 + [ ] Figure out how to make it so when you comment it's at the start of the file.
+* Behind the Wall Problem [0/1]
++ [ ] Look into the layering code. Have an outline appear over the character whenever the character
+  is knowingly layered behind a tile. You can find out if a character is by looking at the layering
+  algothrim.
+* State Machine
+** Game Loop
+This has individual states in between.
+1. Your Input.
+2. Logic.
+3. Render.
+4. (Repeat)
+5. End.
+6. AI.
+7. Back to step 1.
 * Quick Notes
 I did it!
 * [[/Users/Getpeanuts/Documents/Emacs/Hotkeys-Tips.org][Helpful Unity Tips]]

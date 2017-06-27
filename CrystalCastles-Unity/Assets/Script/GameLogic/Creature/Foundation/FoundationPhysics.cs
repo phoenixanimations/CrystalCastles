@@ -18,7 +18,7 @@ namespace CrystalCastles
 		/// Move in a specific direction, this should always be used with VectorMove.
 		/// </summary>
 		/// <param name="direction">The direction to move.</param>
-		public virtual void Move (Vector2 direction)
+		public void Move (Vector2 direction)
 		{
 			RaycastHit2D hit = foundationRaycast.SearchForCollider(direction);
 			if (hit.collider == null)
