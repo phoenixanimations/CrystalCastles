@@ -15,7 +15,15 @@ namespace CrystalCastles
 	public class GameManager : MonoBehaviour
 	{
 		public List<Creature> creatureList = new List<Creature> ();
-		
+
+		void Start () 
+		{
+			foreach (var creature in creatureList) 
+			{
+				creature.UseInStart ();
+			}
+		}
+
 		void Update ()
 		{
 			creatureList.Layer();

@@ -29,11 +29,13 @@ namespace CrystalCastles
 		/// <summary>
 		/// The container for any game logic/stats.
 		/// </summary>
+		/// This should not have a public set.
 		public CharacterSheet characterSheet;
 
 		/// <summary>
 		/// If you want a temporary modifier to any stat, this is what you use.
 		/// </summary>
+		/// This should not have a public set.
 		public CharacterSheet modifierSheet;
 
 		/// <summary>
@@ -41,7 +43,7 @@ namespace CrystalCastles
 		/// a way to make it so this isn't needed.
 		/// </summary>
 		/// spriteRenderer is assigned on scene to make it compatible with the GUI Editor 
-		/// Game Manager button. This should not be able to be set.
+		/// Game Manager button. This should not have a public set.
 		public SpriteRenderer spriteRenderer;
 
 		/// <summary>
@@ -56,11 +58,19 @@ namespace CrystalCastles
 		/// This should not have a public set.
 		public CreaturePhysics creaturePhysics;
 
+		/// <summary>
+		/// This function should be used in the GameManager's start function.
+		/// This function is only meant to run once. Much like a regular class constructor.
+		/// </summary>
 		public void UseInStart () 
 		{
 			/// Fixes the glitch of having the objects grab from one reference and creates a new reference on runtime.
 			characterSheet = ScriptableObject.Instantiate <CharacterSheet> (characterSheet);
 			modifierSheet = ScriptableObject.Instantiate <CharacterSheet> (modifierSheet);
+
+			/// These are called after for clarity sake.
+			creatureRaycast.UseInStart ();
+			creaturePhysics.UseInStart ();
 		}
 	}
 }
