@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CrystalCastles
 {
 	[RequireComponent(typeof(FoundationRaycast))]
-	public class FoundationPhysics : FoundationMovement
+	public class FoundationPhysics : FoundationMovement, IMove
 	{
 		[SerializeField]
 		/// <summary>
