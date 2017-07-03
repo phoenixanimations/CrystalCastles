@@ -68,7 +68,8 @@ namespace CrystalCastles
 			characterSheet = ScriptableObject.Instantiate <CharacterSheet> (characterSheet);
 			modifierSheet = ScriptableObject.Instantiate <CharacterSheet> (modifierSheet);
 
-			/// These are called after for clarity sake.
+			/// These are called after for clarity sake. It actually doesn't matter since these assign a variable that just points to
+			/// Creature.cs CharacterSheet.
 			creatureRaycast.UseInStart ();
 			creaturePhysics.UseInStart ();
 		}
